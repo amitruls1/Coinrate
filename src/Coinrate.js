@@ -19,33 +19,9 @@ export default class Coinrate extends Component{
       .then(res => {
       	var result = JSON.parse(res.data.body);
       	var data = result.result;
-      	this.setState({coindata:data, result:data})
+      	this.setState({coindata:data})
       })
   }, 5000);
-  }
-
-  handleText(e){
-  	let text = e.target.value.toUpperCase();
-  	let data = [];
-  	let oldData = this.state.coindata;
-  	this.setState({
-  		searchText:text,
-  	},()=>{
-  		console.log(this.state.searchText);
-  		if(this.state.searchText != ''){
-	  		for(let i =0; i<this.state.coindata.length;i++){
-	  			if(this.state.coindata[i].MarketName.indexOf(this.state.searchText) >1){
-	  				data.push(this.state.coindata[i]);
-	  			}
-	  		}
-	  		this.setState({result:data},()=>{
-	  			console.log(this.state.result);
-	  		})
-  		}
-  		else{
-  			this.setState({result:oldData})
-  		}
-  	})
   }
 
 	render(){
@@ -58,10 +34,7 @@ export default class Coinrate extends Component{
 				<hr />
 				<div className="row">
 					{
-						this.state.result.map((item,index)=>{
-							if(item.MarketName){
-								item.MarketName = item.MarketName.replace('BTC-','');
-							}
+						this.state.coindata.map((item,index)=>{
 							return(
 								<div className="col-sm-3 col-xs-6 col-lg-3 col-md-3" key={index}>
 									<Card>
