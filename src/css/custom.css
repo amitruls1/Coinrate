@@ -1,0 +1,43 @@
+div.figure{
+    width: 100%;
+    box-shadow: 1px 2px 2px 2px #ccc;
+    margin:5px 0;
+}
+div.figure .header h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+div.figure .header {
+	padding: 10px;
+	background: #f5f5f5;
+}
+div.figure .body {
+    padding:0px 20px;
+}
+div.figure .body label{
+    font-size: 14px;
+    font-weight: 500;
+    color: #585858;
+    width:45%;
+}
+div.figure .body .form-group {
+	margin: 0px;
+}
+.page-title{
+	font-weight: 300;
+}
+hr {
+    margin-top: 0rem !important;
+    margin-bottom: 10px !important;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+small{
+	font-weight: 600 !important;
+}
+.low {
+	color:red;
+}
+.high {
+	color:green;
+}
